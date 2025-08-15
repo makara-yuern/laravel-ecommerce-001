@@ -1,0 +1,123 @@
+.profile-preview-container {
+    margin-top: 10px;
+}
+
+.profile-preview {
+    display: none;
+    max-width: 120px;
+    border-radius: 8px;
+}
+.profile-container {
+    max-width: 400px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.09);
+    padding: 32px;
+}
+
+.profile-container p {
+    text-align: center;
+    color: #374151;
+    font-size: 1.2rem;
+    margin-bottom: 24px;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.12);
+}
+
+.profile-name {
+    margin: 0;
+    color: #6366f1;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.profile-email {
+    color: #374151;
+    font-size: 1rem;
+}
+
+.profile-divider {
+    margin: 24px 0;
+    border: none;
+    border-top: 1px solid #e5e7eb;
+}
+
+.profile-actions {
+    text-align: center;
+}
+
+.profile-back {
+    background: #6366f1;
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px 24px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s;
+    display: inline-block;
+}
+
+.profile-back:hover {
+    background: #4338ca;
+}
+
+.profile-update-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.profile-field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.profile-field label {
+    font-size: 1rem;
+    color: #6366f1;
+    font-weight: 600;
+}
+
+.profile-input {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 1rem;
+    color: #374151;
+    background: #f9fafb;
+}
+
+.profile-save {
+    background: #6366f1;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 0;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 8px;
+    transition: background 0.2s;
+}
+.profile-save:hover {
+    background: #4338ca;
+}
