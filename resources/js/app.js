@@ -1,3 +1,4 @@
+import './profile-preview.js';
 import './bootstrap';
 import '../js/navbar.js';
 import '../js/sidebar.js';

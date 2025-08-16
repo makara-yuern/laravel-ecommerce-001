@@ -106,3 +106,28 @@
   position: relative;
   color: white;
 }
+
+.toggle-switch .slider {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  border-radius: 24px;
+  transition: background-color .4s;
+}
+.toggle-switch input:checked + .slider {
+  background-color: #4CAF50;
+}
+.toggle-switch .slider:before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  transition: left .4s;
+}
+.toggle-switch input:checked + .slider:before {
+  left: 30px;
+}

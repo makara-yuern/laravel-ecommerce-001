@@ -59,29 +59,25 @@
     </div>
     <div class="form-group">
         <label for="profile" class="form-label">Profile Image:</label>
-        <input id="profile" type="file" name="profile" accept="image/*" class="form-input" onchange="previewProfileImage(event)">
+        <input id="profile" type="file" name="profile" accept="image/*" class="form-input">
         <div style="margin-top:10px;">
             <img id="profile-preview" src="#" alt="Profile Preview" style="display:none; max-width:120px; border-radius:8px;" />
         </div>
         @error('profile')<div class="error-message">{{ $message }}</div>@enderror
     </div>
-    <script>
-    function previewProfileImage(event) {
-        const input = event.target;
-        const preview = document.getElementById('profile-preview');
-        if (input.files && input.files[0]) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                preview.src = e.target.result;
-                preview.style.display = 'block';
-            }
-            reader.readAsDataURL(input.files[0]);
-        } else {
-            preview.src = '#';
-            preview.style.display = 'none';
-        }
-    }
-    </script>
+
+    <div class="form-group">
+        <label for="isadmin" class="form-label">Is Admin:</label>
+        <div style="display: flex; align-items: center; gap: 10px;">
+            {{-- <span>Off</span> --}}
+            <label class="toggle-switch" for="isadmin" style="position: relative; display: inline-block; width: 50px; height: 24px; cursor: pointer;">
+                <input type="checkbox" id="isadmin" name="isadmin" value="1" style="width: 0; height: 0; opacity: 0;">
+                <span class="slider"></span>
+            </label>
+            {{-- <span>On</span> --}}
+        </div>
+        @error('isadmin')<div class="error-message">{{ $message }}</div>@enderror
+    </div>
     <div class="form-group form-actions">
         <button type="submit" class="btn-primary">Register</button>
         <a href="{{ route('login') }}" class="link-register">Already have an account? Login</a>

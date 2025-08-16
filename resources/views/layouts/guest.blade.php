@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    @vite(['resources/css/auth.css', 'resources/css/body.css'])
+    @vite(['resources/css/auth.css', 'resources/css/body.css', 'resources/js/profile-preview.js'])
 </head>
 <body>
     <div class="main-content" style="min-height:100vh; display:flex; align-items:center; justify-content:center;">

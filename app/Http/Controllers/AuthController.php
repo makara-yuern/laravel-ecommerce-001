@@ -43,7 +43,7 @@ class AuthController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'profile' => ['nullable', 'image', 'max:2048'],
+            'profile' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
         ]);
 
         $avatarPath = null;
@@ -56,6 +56,7 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'avatar' => $avatarPath,
+            'is_admin' => $request->has('isadmin') ? true : false,
         ]);
 
         Auth::login($user);
