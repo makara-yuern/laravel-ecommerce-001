@@ -9,14 +9,21 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body style="min-height:100vh; margin:0; background:transparent;">
-    <div class="dashboard-layout">
-        @include('components.sidebar')
-        <div class="dashboard-main">
-            @include('components.navbar')
-            <div class="main-content">
+<body>
+    <div class="main-app-wrapper">
+        <aside id="sidebar-ecommerce" class="sidebar">
+            @include('layouts.sidebar')
+        </aside>
+        <div class="flex-1" id="main-content">
+            @include('layouts.navbar')
+            @isset($header)
+                <header class="my-6 px-6">
+                    {{ $header }}
+                </header>
+            @endisset
+            <main class="p-3 pt-0 sm:pt-0 sm:p-6">
                 @yield('content')
-            </div>
+            </main>
         </div>
     </div>
 </body>

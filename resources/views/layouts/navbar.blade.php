@@ -1,5 +1,10 @@
-<header class="navbar">
-    <div class="navbar-content">
+<div class="navbar-content">
+    <div class="navbar-breadcrumb">
+        <nav class="flex items-center text-sm text-gray-600 gap-2 bg-gray-100 px-4 py-2 rounded-md shadow-sm mr-4" aria-label="Breadcrumb">
+            {!! Breadcrumbs::render() !!}
+        </nav>
+    </div>
+    <div class="nav-action">
         <form class="navbar-search">
             <input type="text" placeholder="Search..." class="navbar-search-input">
             <span class="navbar-search-icon">🔍</span>
@@ -22,5 +27,5 @@
                 </form>
             </div>
         </div>
-    </div>
-</header>
+    </div>    
+</div>

@@ -1,0 +1,76 @@
+@extends('layouts.app')
+
+@section('content')
+<div class="product-index-card">
+    <div class="product-index-header">
+        <h1>Product List</h1>
+        <a href="{{ route('products.create') }}" class="btn btn-primary add-product-btn">+ Add Product</a>
+    </div>
+    <form method="GET" action="{{ route('products.index') }}" class="product-filter-bar">
+        <input type="text" name="search" value="{{ request('search') }}" placeholder="Search by name or SKU" class="form-control">
+        <select name="status" class="form-control">
+            <option value="">All Status</option>
+            <option value="active" @if(request('status')=='active') selected @endif>Active</option>
+            <option value="inactive" @if(request('status')=='inactive') selected @endif>Inactive</option>
+        </select>
+        <button type="submit" class="btn btn-info">Filter</button>
+    </form>
+    <div class="product-table-wrapper">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>SKU</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Status</th>
+                <th>Categories</th>
+                <th>Collections</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @forelse($products as $product)
+            <tr>
+                <td>{{ $product->name }}</td>
+                <td>{{ $product->sku }}</td>
+                <td>${{ number_format($product->price, 2) }}</td>
+                <td>{{ $product->stock }}</td>
+                <td>
+                    <span class="badge status-badge {{ $product->status == 'active' ? 'bg-success' : 'bg-secondary' }}">
+                        {{ ucfirst($product->status) }}
+                    </span>
+                </td>
+                <td>
+                    @foreach($product->categories as $cat)
+                        <span class="badge bg-info">{{ $cat->name }}</span>
+                    @endforeach
+                </td>
+                <td>
+                    @foreach($product->collections as $col)
+                        <span class="badge bg-success">{{ $col->name }}</span>
+                    @endforeach
+                </td>
+                <td class="product-actions">
+                    <a href="{{ route('products.show', $product->id) }}" class="btn btn-sm btn-info">View</a>
+                    <a href="{{ route('products.edit', $product->id) }}" class="btn btn-sm btn-warning">Edit</a>
+                    <form action="{{ route('products.destroy', $product->id) }}" method="POST" style="display:inline;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            @empty
+            <tr>
+                <td colspan="8" class="text-center">No products found.</td>
+            </tr>
+            @endforelse
+        </tbody>
+    </table>
+    </div>
+    <div class="product-pagination">
+        {{ $products->links() }}
+    </div>
+</div>
+@endsection

@@ -1,0 +1,265 @@
+.product-create-card {
+    margin: 2.5rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.07);
+    padding: 2.5rem 2.5rem 2.5rem 2.5rem;
+}
+
+@media (max-width: 700px) {
+    .product-create-card {
+        max-width: 98vw;
+        padding: 1.2rem 0.7rem 1.7rem 0.7rem;
+        margin: 1.2rem auto;
+    }
+}
+.product-create-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.product-create-header h1 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #2563eb;
+    margin: 0;
+}
+.product-create-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.form-row label {
+    font-weight: 500;
+    color: #374151;
+}
+.form-row input,
+.form-row select {
+    border-radius: 7px;
+    border: 1px solid #d1d5db;
+    padding: 0.7em 1em;
+    font-size: 1rem;
+    background: #f8fafc;
+    transition: border 0.15s;
+}
+.form-row input:focus,
+.form-row select:focus {
+    border: 1.5px solid #2563eb;
+    outline: none;
+}
+.form-actions {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+}
+.save-btn {
+    background: #22c55e;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    padding: 0.7em 2.2em;
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(34, 197, 94, 0.08);
+    transition: background 0.15s;
+}
+.save-btn:hover {
+    background: #16a34a;
+}
+.cancel-btn {
+    background: #e5e7eb;
+    color: #374151;
+    border: none;
+    border-radius: 7px;
+    padding: 0.7em 1.6em;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: background 0.15s;
+}
+.cancel-btn:hover {
+    background: #d1d5db;
+    color: #111827;
+}
+.product-index-card {
+    margin: 2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.07);
+    padding: 2rem 2.5rem 2.5rem 2.5rem;
+}
+
+.product-index-header {
+    width: 97%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.add-product-btn {
+    font-size: 1rem;
+    padding: 0.6em 1.4em;
+    border-radius: 8px;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: background 0.15s, color 0.15s;
+}
+.add-product-btn:hover {
+    background: #2563eb;
+    color: #fff;
+}
+
+.product-filter-bar {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.product-filter-bar input {
+    width: 15%;
+}
+
+.product-filter-bar input,
+.product-filter-bar select {
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+    padding: 0.5em 0.9em;
+    font-size: 1rem;
+}
+
+.product-filter-bar .btn-info {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5em 1.2em;
+    font-weight: 500;
+    transition: background 0.15s;
+}
+.product-filter-bar .btn-info:hover {
+    background: #1d4ed8;
+}
+
+.product-table-wrapper {
+    overflow-x: auto;
+}
+
+.product-actions .btn {
+    margin-right: 0.3em;
+    margin-bottom: 0.2em;
+    transition: box-shadow 0.15s, background 0.15s;
+}
+.product-actions .btn-info:hover {
+    background: #2563eb;
+    color: #fff;
+}
+.product-actions .btn-warning:hover {
+    background: #f59e42;
+    color: #fff;
+}
+.product-actions .btn-danger:hover {
+    background: #dc2626;
+    color: #fff;
+}
+
+.status-badge.bg-success {
+    background: #22c55e;
+    color: #fff;
+}
+.status-badge.bg-secondary {
+    background: #d1d5db;
+    color: #333;
+}
+
+.product-pagination {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+}
+.container h1 {
+    width: 90%;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.main-container-action {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto 1.5rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.main-container-action a.btn {
+    flex-shrink: 0;
+}
+
+.main-container-action form {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex: 1;
+}
+
+.main-container-action input,
+.main-container-action select {
+    max-width: 250px;
+}
+
+.table {
+    width: 97%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.table th,
+.table td {
+    padding: 14px 16px;
+    border: 1px solid #dee2e6;
+    color: #333;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #fdfdfd;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f5f9;
+}
+
+.badge {
+    font-size: 0.8rem;
+    padding: 0.4em 0.6em;
+    border-radius: 0.5rem;
+}
+
+.btn-sm {
+    margin: 2px 0;
+}

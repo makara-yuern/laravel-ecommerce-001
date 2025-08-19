@@ -1,6 +1,6 @@
 function previewProfileImage(event) {
     const input = event.target;
-    const preview = document.getElementById('profile-preview');
+    const preview = document.getElementById('profilePreview');
     if (input.files && input.files[0]) {
         const reader = new FileReader();
         reader.onload = function(e) {
@@ -15,8 +15,8 @@ function previewProfileImage(event) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    const profileInput = document.getElementById('profile');
-    if (profileInput) {
-        profileInput.addEventListener('change', previewProfileImage);
+    const avatarInput = document.getElementById('avatar');
+    if (avatarInput) {
+        avatarInput.addEventListener('change', previewProfileImage);
     }
 });
