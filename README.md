@@ -2,6 +2,14 @@
 
 This project uses [diglactic/laravel-breadcrumbs](https://github.com/diglactic/laravel-breadcrumbs) for navigation breadcrumbs.
 
+### Installation
+
+Install the package via Composer:
+
+```sh
+composer require diglactic/laravel-breadcrumbs
+```
+
 ### How to use:
 
 1. **Define breadcrumbs** in `routes/breadcrumbs.php`:
@@ -104,10 +112,11 @@ Follow these steps to set up and run this Laravel project:
     ```
 
 9. **Start the development server:**
+
     ```sh
     php artisan serve
     ```
-    
+
     Visit the URL shown in your terminal (usually http://127.0.0.1:8000).
 
 ## Troubleshooting
