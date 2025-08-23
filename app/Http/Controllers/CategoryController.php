@@ -15,18 +15,20 @@ class CategoryController extends Controller
 
     public function create()
     {
-        $parents = Category::whereNull('parent_id')->get();
-        return view('categories.create', compact('parents'));
+        $categories = Category::all();
+        return view('categories.create', compact('categories'));
     }
 
     public function store(Request $request)
     {
         $data = $request->validate([
             'name' => 'required|string|max:255',
+            'slug' => 'nullable|string|max:255|unique:categories,slug',
             'parent_id' => 'nullable|exists:categories,id',
+            'status' => 'boolean',
         ]);
         Category::create($data);
-        return redirect()->route('categories.index');
+        return redirect()->route('categories.index')->with('success', 'Category created successfully.');
     }
 
     public function show($id)
@@ -38,8 +40,8 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $category = Category::findOrFail($id);
-        $parents = Category::whereNull('parent_id')->get();
-        return view('categories.edit', compact('category', 'parents'));
+        $categories = Category::all();
+        return view('categories.edit', compact('category', 'categories'));
     }
 
     public function update(Request $request, $id)
@@ -47,7 +49,9 @@ class CategoryController extends Controller
         $category = Category::findOrFail($id);
         $data = $request->validate([
             'name' => 'required|string|max:255',
+            'slug' => 'nullable|string|max:255|unique:categories,slug,' . $category->id,
             'parent_id' => 'nullable|exists:categories,id',
+            'status' => 'boolean',
         ]);
         $category->update($data);
         return redirect()->route('categories.index');

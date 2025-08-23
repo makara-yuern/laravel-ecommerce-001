@@ -18,7 +18,7 @@ Route::post('/register', [AuthController::class, 'register']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->name('dashboard');
+})->middleware('auth')->name('dashboard');
 
 // Products
 Route::prefix('products')->name('products.')->group(function () {
@@ -59,3 +59,4 @@ Route::middleware('auth')->group(function () {
     Route::post('/profile/update', [ProfileController::class, 'updateProfile'])->name('profile.update');
 });
 
+Route::get('/test', [CollectionController::class, 'test'])->name('test');

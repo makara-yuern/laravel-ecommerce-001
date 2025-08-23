@@ -13,6 +13,11 @@ class CollectionController extends Controller
         return view('collections.index', compact('collections'));
     }
 
+    public function test()
+    {
+        return view('collections.test');
+    }
+
     public function create()
     {
         return view('collections.create');
@@ -20,12 +25,16 @@ class CollectionController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->validate([
-            'name' => 'required|string|max:255',
-            'description' => 'nullable|string',
-        ]);
-        Collection::create($data);
-        return redirect()->route('collections.index');
+        try {
+            $data = $request->validate([
+                'name' => 'required|string|max:255',
+                'description' => 'nullable|string',
+            ]);
+            Collection::create($data);
+            return redirect()->route('collections.index')->with(KEY_SUCCESS, 'Collection created successfully.');
+        } catch (\Exception $e) {
+            return redirect()->route('collections.index')->with(KEY_FAIL, 'Failed to create collection.');
+        }
     }
 
     public function show($id)

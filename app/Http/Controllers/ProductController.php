@@ -31,16 +31,27 @@ class ProductController extends Controller
             'price' => 'required|numeric',
             'stock' => 'required|integer',
             'status' => 'required|in:active,inactive',
+            'images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
         ]);
         $product = Product::create($data);
-        // Attach categories, collections, variants, etc. if needed
         if ($request->has('categories')) {
             $product->categories()->sync($request->input('categories'));
         }
         if ($request->has('collections')) {
             $product->collections()->sync($request->input('collections'));
         }
-        return redirect()->route('products.index');
+        // Handle image upload
+        if ($request->hasFile('images')) {
+            $images = $request->file('images');
+            foreach ($images as $idx => $img) {
+                $path = $img->store('products', 'public');
+                $product->images()->create([
+                    'url' => $path,
+                    'is_main' => $idx === 0 ? true : false,
+                ]);
+            }
+        }
+        return redirect()->route('products.index')->with(KEY_SUCCESS, 'Product created successfully.');
     }
 
     public function show($id)
@@ -74,6 +85,7 @@ class ProductController extends Controller
             'price' => 'required|numeric',
             'stock' => 'required|integer',
             'status' => 'required|in:active,inactive',
+            'images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
         ]);
         $product->update($data);
         if ($request->has('categories')) {
@@ -81,6 +93,17 @@ class ProductController extends Controller
         }
         if ($request->has('collections')) {
             $product->collections()->sync($request->input('collections'));
+        }
+        // Handle new image uploads (add to existing images)
+        if ($request->hasFile('images')) {
+            $images = $request->file('images');
+            foreach ($images as $img) {
+                $path = $img->store('products', 'public');
+                $product->images()->create([
+                    'url' => $path,
+                    'is_main' => false,
+                ]);
+            }
         }
         return redirect()->route('products.index');
     }

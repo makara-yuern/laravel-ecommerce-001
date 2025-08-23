@@ -1,0 +1,55 @@
+/* Back to List button spacing for detail pages */
+.btn-back-list {
+    margin-top: 1.5rem;
+    display: inline-block;
+}
+
+.btn-action {
+    display: inline-block;
+    padding: 6px 14px;
+    font-size: 0.95rem;
+    border-radius: 5px;
+    border: none;
+    margin: 0 2px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    background: #f3f4f6;
+    color: #222;
+    text-decoration: none;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.btn-action:hover {
+    background: #4f8cff;
+    color: #fff;
+}
+
+.btn-action.view {
+    background: #e0f2fe;
+    color: #0369a1;
+}
+
+.btn-action.view:hover {
+    background: #0369a1;
+    color: #fff;
+}
+
+.btn-action.edit {
+    background: #fef9c3;
+    color: #b45309;
+}
+
+.btn-action.edit:hover {
+    background: #b45309;
+    color: #fff;
+}
+
+.btn-action.delete {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.btn-action.delete:hover {
+    background: #b91c1c;
+    color: #fff;
+}

@@ -4,6 +4,14 @@
 @import "../css/dashboard.css";
 @import "../css/profile.css";
 @import "../css/product.css";
+@import "../css/category.css";
+@import "../css/notification.css";
+@import "../css/product-select.css";
+@import "../css/action-buttons.css";
+@import "../css/detail-card.css";
+@import "../css/product-form.css";
+@import "../css/product-edit.css";
+@import "../css/test.css";
 
 /* Main app layout wrapper */
 .main-app-wrapper {
@@ -15,4 +23,23 @@
 
 #main-content {
     flex: 1;
+}
+
+.breadcrumb {
+    list-style: none;
+    padding-left: 0;
+    background: none;
+    margin-bottom: 1rem;
+}
+.breadcrumb-item {
+    display: inline;
+}
+.breadcrumb-item + .breadcrumb-item::before {
+    content: " > ";
+    color: #888;
+}
+
+.breadcrumb a {
+    text-decoration: none !important;
+    color: #888;
 }

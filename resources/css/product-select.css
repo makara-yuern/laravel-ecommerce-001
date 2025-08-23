@@ -1,0 +1,34 @@
+/* Custom styles for select dropdowns in product create/edit forms */
+
+select#categories,
+select#collections {
+    width: 100%;
+    min-height: 40px;
+    padding: 8px 12px;
+    border: 1px solid #bdbdbd;
+    border-radius: 6px;
+    background: #f9f9f9;
+    font-size: 1rem;
+    color: #333;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    transition: border-color 0.2s;
+}
+
+select#categories:focus,
+select#collections:focus {
+    border-color: #4f8cff;
+    outline: none;
+    background: #fff;
+}
+
+select#categories option,
+select#collections option {
+    padding: 6px 10px;
+}
+
+.form-row label[for="categories"],
+.form-row label[for="collections"] {
+    font-weight: 500;
+    margin-bottom: 2px;
+}

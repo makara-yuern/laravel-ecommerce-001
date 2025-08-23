@@ -24,5 +24,15 @@ class UserSeeder extends Seeder
             ]
         );
 
+        User::updateOrCreate(
+            ['email' => 'jujutsu@gmail.com'],
+            [
+                'name' => fake()->name(),
+                'email_verified_at' => now(),
+                'password' => bcrypt('password'),
+                'is_admin' => true,
+            ]
+        );
+
     }
 }

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+@include('layouts.notification')
 <div class="product-index-card">
     <div class="product-index-header">
         <h1>Product List</h1>
@@ -19,6 +20,7 @@
     <table class="table table-bordered">
         <thead>
             <tr>
+                <th>Image</th>
                 <th>Name</th>
                 <th>SKU</th>
                 <th>Price</th>
@@ -32,6 +34,16 @@
         <tbody>
             @forelse($products as $product)
             <tr>
+                <td>
+                    @php
+                        $mainImage = $product->images->where('is_main', true)->first() ?? $product->images->first();
+                    @endphp
+                    @if($mainImage)
+                        <img src="{{ asset('storage/' . $mainImage->url) }}" alt="Product Image" style="max-width:60px;max-height:60px;border:1px solid #ccc;">
+                    @else
+                        <span style="color:#aaa;font-size:12px;">No image</span>
+                    @endif
+                </td>
                 <td>{{ $product->name }}</td>
                 <td>{{ $product->sku }}</td>
                 <td>${{ number_format($product->price, 2) }}</td>
@@ -52,12 +64,12 @@
                     @endforeach
                 </td>
                 <td class="product-actions">
-                    <a href="{{ route('products.show', $product->id) }}" class="btn btn-sm btn-info">View</a>
-                    <a href="{{ route('products.edit', $product->id) }}" class="btn btn-sm btn-warning">Edit</a>
+                    <a href="{{ route('products.show', $product->id) }}" class="btn-action view">View</a>
+                    <a href="{{ route('products.edit', $product->id) }}" class="btn-action edit">Edit</a>
                     <form action="{{ route('products.destroy', $product->id) }}" method="POST" style="display:inline;">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
+                        <button type="submit" class="btn-action delete" onclick="return confirm('Are you sure?')">Delete</button>
                     </form>
                 </td>
             </tr>

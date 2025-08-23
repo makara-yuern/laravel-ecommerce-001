@@ -5,23 +5,14 @@
 </div>
 <nav>
     <ul class="sidebar-menu">
-        <li><a href="{{ route('dashboard') }}" class="{{ request()->routeIs('dashboard') ? 'active' : '' }} sidebar-menu-main"><span class="sidebar-icon">🏠</span> Dashboard</a></li>
-        <li class="sidebar-dropdown">
-            <div class="sidebar-dropdown-row">
-                <a href="{{ route('products.index') }}" class="{{ request()->routeIs('products.*') || request()->routeIs('categories.*') || request()->routeIs('collections.*') ? 'active' : '' }}"><span class="sidebar-icon">📦</span> Products</a>
-                <span class="sidebar-dropdown-arrow" style="cursor:pointer;" onclick="toggleSidebarDropdown(event)" data-dropdown="products"><i class="fa-solid fa-circle-chevron-down"></i></span>
-            </div>
-            <ul class="sidebar-submenu" data-dropdown="products" style="display:none;">
-                <li><a href="{{ route('products.index') }}" class="{{ request()->routeIs('products.index') ? 'active' : '' }}"><span class="sidebar-icon">📋</span> Product List</a></li>
-                <li><a href="{{ route('products.create') }}" class="{{ request()->routeIs('products.create') ? 'active' : '' }}"><span class="sidebar-icon">➕</span> Add Product</a></li>
-                <li><a href="{{ route('categories.index') }}" class="{{ request()->routeIs('categories.*') ? 'active' : '' }}"><span class="sidebar-icon">🗂️</span> Categories</a></li>
-                <li><a href="{{ route('collections.index') }}" class="{{ request()->routeIs('collections.*') ? 'active' : '' }}"><span class="sidebar-icon">🎉</span> Collections</a></li>
-            </ul>
-        </li>
-        <li><a href="#" class="{{ request()->routeIs('sales.*') ? 'active' : '' }} sidebar-menu-main"><span class="sidebar-icon">💰</span> Sales</a></li>
-        <li><a href="#" class="{{ request()->routeIs('customers.*') ? 'active' : '' }} sidebar-menu-main"><span class="sidebar-icon">👥</span> Customers</a></li>
-        <li><a href="#" class="{{ request()->routeIs('settings.*') ? 'active' : '' }} sidebar-menu-main"><span class="sidebar-icon">⚙️</span> Settings</a></li>
-        <li><a href="{{ route('profile') }}" class="{{ request()->routeIs('profile') ? 'active' : '' }} sidebar-menu-main"><span class="sidebar-icon">👤</span> Profile</a></li>
+    <li><a href="{{ route('dashboard') }}" class="{{ request()->routeIs('dashboard') ? 'active' : '' }} sidebar-menu-main"><span class="sidebar-icon"><img src="{{ asset('storage/images/home.png') }}" alt="Home" style="width:22px;height:22px;"></span> Dashboard</a></li>
+    <li><a href="{{ route('products.index') }}" class="{{ request()->routeIs('products.*') ? 'active' : '' }} sidebar-menu-main"><span class="sidebar-icon"><img src="{{ asset('storage/images/products.png') }}" alt="Products" style="width:22px;height:22px;"></span> Products</a></li>
+    <li><a href="{{ route('categories.index') }}" class="{{ request()->routeIs('categories.*') ? 'active' : '' }} sidebar-menu-main"><span class="sidebar-icon"><img src="{{ asset('storage/images/categories.png') }}" alt="Categories" style="width:22px;height:22px;"></span> Categories</a></li>
+    <li><a href="{{ route('collections.index') }}" class="{{ request()->routeIs('collections.*') ? 'active' : '' }} sidebar-menu-main"><span class="sidebar-icon"><img src="{{ asset('storage/images/collections.png') }}" alt="Collections" style="width:22px;height:22px;"></span> Collections</a></li>
+    <li><a href="{{ route('test') }}" class="{{ request()->routeIs('test') ? 'active' : '' }} sidebar-menu-main"><span class="sidebar-icon"><img src="{{ asset('storage/images/sale.png') }}" alt="Sales" style="width:22px;height:22px;"></span> Sales</a></li>
+    <li><a href="#" class="{{ request()->routeIs('customers.*') ? 'active' : '' }} sidebar-menu-main"><span class="sidebar-icon"><img src="{{ asset('storage/images/customers.png') }}" alt="Customers" style="width:22px;height:22px;"></span> Customers</a></li>
+    <li><a href="#" class="{{ request()->routeIs('settings.*') ? 'active' : '' }} sidebar-menu-main"><span class="sidebar-icon"><img src="{{ asset('storage/images/settings.png') }}" alt="Settings" style="width:22px;height:22px;"></span> Settings</a></li>
+    <li><a href="{{ route('profile') }}" class="{{ request()->routeIs('profile') ? 'active' : '' }} sidebar-menu-main"><span class="sidebar-icon"><img src="{{ asset('storage/images/profile.png') }}" alt="Profile" style="width:22px;height:22px;"></span> Profile</a></li>
     </ul>
 </nav>
 

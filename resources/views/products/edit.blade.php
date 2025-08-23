@@ -1,52 +1,72 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <h1>Edit Product</h1>
-    <form action="{{ route('products.update', $product->id) }}" method="POST">
-        @csrf
-        @method('PUT')
-        <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" name="name" id="name" class="form-control" value="{{ $product->name }}" required>
-        </div>
-        <div class="mb-3">
-            <label for="sku" class="form-label">SKU</label>
-            <input type="text" name="sku" id="sku" class="form-control" value="{{ $product->sku }}">
-        </div>
-        <div class="mb-3">
-            <label for="price" class="form-label">Price</label>
-            <input type="number" name="price" id="price" class="form-control" step="0.01" value="{{ $product->price }}" required>
-        </div>
-        <div class="mb-3">
-            <label for="stock" class="form-label">Stock</label>
-            <input type="number" name="stock" id="stock" class="form-control" value="{{ $product->stock }}" required>
-        </div>
-        <div class="mb-3">
-            <label for="status" class="form-label">Status</label>
-            <select name="status" id="status" class="form-control">
-                <option value="active" @if($product->status=='active') selected @endif>Active</option>
-                <option value="inactive" @if($product->status=='inactive') selected @endif>Inactive</option>
-            </select>
-        </div>
-        <div class="mb-3">
-            <label for="categories" class="form-label">Categories</label>
-            <select name="categories[]" id="categories" class="form-control" multiple>
-                @foreach($categories as $cat)
-                    <option value="{{ $cat->id }}" @if($product->categories->contains($cat->id)) selected @endif>{{ $cat->name }}</option>
+<div class="product-create-card">
+    <div class="product-create-header">
+        <h1>Edit Product</h1>
+    </div>
+    <form action="{{ route('products.update', $product->id) }}" method="POST" class="product-create-form" enctype="multipart/form-data">
+    @csrf
+    @method('PUT')
+    <div class="form-row">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" value="{{ $product->name }}" required>
+    </div>
+    <div class="form-row">
+        <label for="sku">SKU</label>
+        <input type="text" name="sku" id="sku" value="{{ $product->sku }}">
+    </div>
+    <div class="form-row">
+        <label for="price">Price</label>
+        <input type="number" name="price" id="price" step="0.01" value="{{ $product->price }}" required>
+    </div>
+    <div class="form-row">
+        <label for="stock">Stock</label>
+        <input type="number" name="stock" id="stock" value="{{ $product->stock }}" required>
+    </div>
+    <div class="form-row">
+        <label for="status">Status</label>
+        <select name="status" id="status">
+            <option value="active" @if($product->status=='active') selected @endif>Active</option>
+            <option value="inactive" @if($product->status=='inactive') selected @endif>Inactive</option>
+        </select>
+    </div>
+    <div class="form-row">
+        <label for="images">Product Images</label>
+        <input type="file" name="images[]" id="images" multiple accept="image/*">
+    </div>
+    @if($product->images && $product->images->count())
+        <div class="form-row">
+            <label>Current Images:</label>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;">
+                @foreach($product->images as $img)
+                    <div>
+                        <img src="{{ asset('storage/' . $img->url) }}" alt="Product Image" style="max-width:80px;max-height:80px;border:1px solid #ccc;border-radius:6px;">
+                    </div>
                 @endforeach
-            </select>
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="collections" class="form-label">Collections</label>
-            <select name="collections[]" id="collections" class="form-control" multiple>
-                @foreach($collections as $col)
-                    <option value="{{ $col->id }}" @if($product->collections->contains($col->id)) selected @endif>{{ $col->name }}</option>
-                @endforeach
-            </select>
-        </div>
-        <button type="submit" class="btn btn-success">Update</button>
-        <a href="{{ route('products.index') }}" class="btn btn-secondary">Cancel</a>
+    @endif
+    <div class="form-row">
+        <label for="categories">Categories</label>
+        <select name="categories[]" id="categories" multiple>
+            @foreach($categories as $cat)
+                <option value="{{ $cat->id }}" @if($product->categories->contains($cat->id)) selected @endif>{{ $cat->name }}</option>
+            @endforeach
+        </select>
+    </div>
+    <div class="form-row">
+        <label for="collections">Collections</label>
+        <select name="collections[]" id="collections" multiple>
+            @foreach($collections as $col)
+                <option value="{{ $col->id }}" @if($product->collections->contains($col->id)) selected @endif>{{ $col->name }}</option>
+            @endforeach
+        </select>
+    </div>
+    <div class="form-actions">
+        <button type="submit" class="btn btn-success save-btn">Update</button>
+        <a href="{{ route('products.index') }}" class="btn btn-secondary cancel-btn">Cancel</a>
+    </div>
     </form>
 </div>
 @endsection

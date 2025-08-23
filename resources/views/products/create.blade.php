@@ -5,7 +5,7 @@
     <div class="product-create-header">
         <h1>Add Product</h1>
     </div>
-    <form action="{{ route('products.store') }}" method="POST" class="product-create-form">
+    <form action="{{ route('products.store') }}" method="POST" class="product-create-form" enctype="multipart/form-data">
         @csrf
         <div class="form-row">
             <label for="name">Name</label>
@@ -31,10 +31,14 @@
             </select>
         </div>
         <div class="form-row">
+            <label for="images">Product Images</label>
+            <input type="file" name="images[]" id="images" multiple accept="image/*">
+        </div>
+        <div class="form-row">
             <label for="categories">Categories</label>
             <select name="categories[]" id="categories" multiple>
-                @foreach($categories as $cat)
-                    <option value="{{ $cat->id }}">{{ $cat->name }}</option>
+                @foreach(\App\Models\Category::getNestedCategories($categories) as $cat)
+                    <option value="{{ $cat['id'] }}">{{ $cat['name'] }}</option>
                 @endforeach
             </select>
         </div>

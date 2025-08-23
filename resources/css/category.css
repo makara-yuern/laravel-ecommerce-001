@@ -1,0 +1,35 @@
+.category-index-card, .collection-index-card {
+    margin: 2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.07);
+    padding: 2rem 2.5rem 2.5rem 2.5rem;
+}
+
+.category-index-header, .collection-index-header {
+    width: 97%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.category-index-header h1, .collection-index-header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2563eb;
+    margin: 0;
+}
+
+.add-category-btn:hover, .add-collection-btn:hover {
+    background: #2563eb;
+    color: #fff;
+}
+
+.category-create-card, .collection-create-card {
+    margin: 2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.07);
+    padding: 2rem 2.5rem 2.5rem 2.5rem;
+}
