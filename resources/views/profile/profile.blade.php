@@ -4,7 +4,7 @@
 <div class="profile-container">
     <p>Update your profile information</p>
     <div class="profile-info">
-    <img src="{{ Auth::user()->avatar ? asset('storage/' . Auth::user()->avatar) : asset('storage/images/ecommerce03.jpg') }}" alt="Profile" class="profile-avatar" id="profilePreview" style="cursor:pointer;" onclick="document.getElementById('avatar').click()">
+    <img src="{{ Auth::user()->avatar ? asset('storage/' . Auth::user()->avatar) : asset('images/ecommerce03.jpg') }}" alt="Profile" class="profile-avatar" id="profilePreview" style="cursor:pointer;" onclick="document.getElementById('avatar').click()">
     <form method="POST" action="{{ route('profile.update') }}" class="profile-update-form" enctype="multipart/form-data">
             @csrf
             @method('POST')
