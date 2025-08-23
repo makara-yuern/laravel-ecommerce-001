@@ -107,13 +107,7 @@ Follow these steps to set up and run this Laravel project:
     ```sh
     php artisan serve
     ```
-10. **Open new terminal run:**
-
-    ```
-    npm run build
-    npm run dev
-    ```
-
+    
     Visit the URL shown in your terminal (usually http://127.0.0.1:8000).
 
 ## Troubleshooting
