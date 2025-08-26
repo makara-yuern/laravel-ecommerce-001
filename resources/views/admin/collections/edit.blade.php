@@ -5,7 +5,7 @@
     <div class="product-create-header">
         <h1>Edit Collection</h1>
     </div>
-    <form action="{{ route('collections.update', $collection->id) }}" method="POST" class="product-create-form">
+    <form action="{{ route('admin.collections.update', $collection->id) }}" method="POST" class="product-create-form">
         @csrf
         @method('PUT')
         <div class="form-row">
@@ -14,7 +14,7 @@
         </div>
         <div class="form-actions">
             <button type="submit" class="btn btn-success save-btn">Update</button>
-            <a href="{{ route('collections.index') }}" class="btn btn-secondary cancel-btn">Cancel</a>
+            <a href="{{ route('admin.collections.index') }}" class="btn btn-secondary cancel-btn">Cancel</a>
         </div>
     </form>
 </div>

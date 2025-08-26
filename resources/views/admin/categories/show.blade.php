@@ -10,6 +10,6 @@
         <li><span class="detail-label">Parent:</span> <span class="detail-value">{{ $category->parent ? $category->parent->name : '-' }}</span></li>
         <li><span class="detail-label">Status:</span> <span class="detail-value">{{ $category->status ? 'Active' : 'Inactive' }}</span></li>
     </ul>
-    <a href="{{ route('categories.index') }}" class="btn-action view btn-back-list">← Back to List</a>
+    <a href="{{ route('admin.categories.index') }}" class="btn-action view btn-back-list">← Back to List</a>
 </div>
 @endsection

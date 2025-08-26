@@ -11,6 +11,6 @@
         <li><span class="detail-label">Categories:</span> <span class="detail-value">@foreach($product->categories as $cat)<span class="badge bg-info">{{ $cat->name }}</span> @endforeach</span></li>
         <li><span class="detail-label">Collections:</span> <span class="detail-value">@foreach($product->collections as $col)<span class="badge bg-success">{{ $col->name }}</span> @endforeach</span></li>
     </ul>
-    <a href="{{ route('products.index') }}" class="btn-action view btn-back-list">← Back to List</a>
+    <a href="{{ route('admin.products.index') }}" class="btn-action view btn-back-list">← Back to List</a>
 </div>
 @endsection

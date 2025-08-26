@@ -5,7 +5,7 @@
     <div class="product-create-header">
         <h1>Edit Category</h1>
     </div>
-    <form action="{{ route('categories.update', $category->id) }}" method="POST" class="product-create-form">
+    <form action="{{ route('admin.categories.update', $category->id) }}" method="POST" class="product-create-form">
         @csrf
         @method('PUT')
         <div class="form-row">
@@ -36,7 +36,7 @@
         </div>
         <div class="form-actions">
             <button type="submit" class="btn btn-success save-btn">Update</button>
-            <a href="{{ route('categories.index') }}" class="btn btn-secondary cancel-btn">Cancel</a>
+            <a href="{{ route('admin.categories.index') }}" class="btn btn-secondary cancel-btn">Cancel</a>
         </div>
     </form>
 </div>

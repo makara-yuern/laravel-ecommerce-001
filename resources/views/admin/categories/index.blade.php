@@ -5,9 +5,9 @@
 <div class="category-index-card">
     <div class="category-index-header">
         <h1>Categories</h1>
-        <a href="{{ route('categories.create') }}" class="btn add-category-btn">+ Add Category</a>
+        <a href="{{ route('admin.categories.create') }}" class="btn add-category-btn">+ Add Category</a>
     </div>
-    <form method="GET" action="{{ route('categories.index') }}" class="product-filter-bar">
+    <form method="GET" action="{{ route('admin.categories.index') }}" class="product-filter-bar">
         <input type="text" name="search" value="{{ request('search') }}" placeholder="Search by name or slug" class="form-control">
         <select name="status" class="form-control">
             <option value="">All Status</option>
@@ -42,9 +42,9 @@
                         @endif
                     </td>
                     <td>
-                        <a href="{{ route('categories.show', $category->id) }}" class="btn-action view">View</a>
-                        <a href="{{ route('categories.edit', $category->id) }}" class="btn-action edit">Edit</a>
-                        <form action="{{ route('categories.destroy', $category->id) }}" method="POST" class="action">
+                        <a href="{{ route('admin.categories.show', $category->id) }}" class="btn-action view">View</a>
+                        <a href="{{ route('admin.categories.edit', $category->id) }}" class="btn-action edit">Edit</a>
+                        <form action="{{ route('admin.categories.destroy', $category->id) }}" method="POST" class="action">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn-action delete" onclick="return confirm('Are you sure?')">Delete</button>

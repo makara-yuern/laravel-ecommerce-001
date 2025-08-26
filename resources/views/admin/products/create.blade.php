@@ -5,7 +5,7 @@
     <div class="product-create-header">
         <h1>Add Product</h1>
     </div>
-    <form action="{{ route('products.store') }}" method="POST" class="product-create-form" enctype="multipart/form-data">
+    <form action="{{ route('admin.products.store') }}" method="POST" class="product-create-form" enctype="multipart/form-data">
         @csrf
         <div class="form-row">
             <label for="name">Name</label>
@@ -52,7 +52,7 @@
         </div>
         <div class="form-actions">
             <button type="submit" class="btn btn-success save-btn">Save</button>
-            <a href="{{ route('products.index') }}" class="btn btn-secondary cancel-btn">Cancel</a>
+            <a href="{{ route('admin.products.index') }}" class="btn btn-secondary cancel-btn">Cancel</a>
         </div>
     </form>
 </div>

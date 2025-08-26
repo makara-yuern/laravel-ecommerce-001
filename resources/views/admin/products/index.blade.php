@@ -5,9 +5,9 @@
 <div class="product-index-card">
     <div class="product-index-header">
         <h1>Product List</h1>
-        <a href="{{ route('products.create') }}" class="btn add-product-btn">+ Add Product</a>
+        <a href="{{ route('admin.products.create') }}" class="btn add-product-btn">+ Add Product</a>
     </div>
-    <form method="GET" action="{{ route('products.index') }}" class="product-filter-bar">
+    <form method="GET" action="{{ route('admin.products.index') }}" class="product-filter-bar">
         <input type="text" name="search" value="{{ request('search') }}" placeholder="Search by name or SKU" class="form-control">
         <select name="status" class="form-control">
             <option value="">All Status</option>
@@ -64,9 +64,9 @@
                     @endforeach
                 </td>
                 <td class="product-actions">
-                    <a href="{{ route('products.show', $product->id) }}" class="btn-action view">View</a>
-                    <a href="{{ route('products.edit', $product->id) }}" class="btn-action edit">Edit</a>
-                    <form action="{{ route('products.destroy', $product->id) }}" method="POST" class="action">
+                    <a href="{{ route('admin.products.show', $product->id) }}" class="btn-action view">View</a>
+                    <a href="{{ route('admin.products.edit', $product->id) }}" class="btn-action edit">Edit</a>
+                    <form action="{{ route('admin.products.destroy', $product->id) }}" method="POST" class="action">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn-action delete" onclick="return confirm('Are you sure?')">Delete</button>

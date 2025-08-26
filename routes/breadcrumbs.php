@@ -20,63 +20,63 @@ Breadcrumbs::for('admin.profile', function (BreadcrumbTrail $trail) {
 });
 
 // Products
-Breadcrumbs::for('products.index', function (BreadcrumbTrail $trail) {
-	$trail->push('Products', route('products.index'));
+Breadcrumbs::for('admin.products.index', function (BreadcrumbTrail $trail) {
+	$trail->push('Products', route('admin.products.index'));
 });
 
-Breadcrumbs::for('products.create', function (BreadcrumbTrail $trail) {
-	$trail->parent('products.index');
-	$trail->push('Create', route('products.create'));
+Breadcrumbs::for('admin.products.create', function (BreadcrumbTrail $trail) {
+	$trail->parent('admin.products.index');
+	$trail->push('Create', route('admin.products.create'));
 });
 
-Breadcrumbs::for('products.edit', function (BreadcrumbTrail $trail, $id) {
-	$trail->parent('products.index');
-	$trail->push('Edit', route('products.edit', $id));
+Breadcrumbs::for('admin.products.edit', function (BreadcrumbTrail $trail, $id) {
+	$trail->parent('admin.products.index');
+	$trail->push('Edit', route('admin.products.edit', $id));
 });
 
-Breadcrumbs::for('products.show', function (BreadcrumbTrail $trail, $id) {
-	$trail->parent('products.index');
-	$trail->push('Product Details', route('products.show', $id));
+Breadcrumbs::for('admin.products.show', function (BreadcrumbTrail $trail, $id) {
+	$trail->parent('admin.products.index');
+	$trail->push('Product Details', route('admin.products.show', $id));
 });
 
 // Categories
-Breadcrumbs::for('categories.index', function (BreadcrumbTrail $trail) {
-	$trail->push('Categories', route('categories.index'));
+Breadcrumbs::for('admin.categories.index', function (BreadcrumbTrail $trail) {
+	$trail->push('Categories', route('admin.categories.index'));
 });
 
-Breadcrumbs::for('categories.create', function (BreadcrumbTrail $trail) {
-	$trail->parent('categories.index');
-	$trail->push('Create', route('categories.create'));
+Breadcrumbs::for('admin.categories.create', function (BreadcrumbTrail $trail) {
+	$trail->parent('admin.categories.index');
+	$trail->push('Create', route('admin.categories.create'));
 });
 
-Breadcrumbs::for('categories.edit', function (BreadcrumbTrail $trail, $id) {
-	$trail->parent('categories.index');
-	$trail->push('Edit', route('categories.edit', $id));
+Breadcrumbs::for('admin.categories.edit', function (BreadcrumbTrail $trail, $id) {
+	$trail->parent('admin.categories.index');
+	$trail->push('Edit', route('admin.categories.edit', $id));
 });
 
-Breadcrumbs::for('categories.show', function (BreadcrumbTrail $trail, $id) {
-	$trail->parent('categories.index');
-	$trail->push('Category Details', route('categories.show', $id));
+Breadcrumbs::for('admin.categories.show', function (BreadcrumbTrail $trail, $id) {
+	$trail->parent('admin.categories.index');
+	$trail->push('Category Details', route('admin.categories.show', $id));
 });
 
 // Collections
-Breadcrumbs::for('collections.index', function (BreadcrumbTrail $trail) {
-	$trail->push('Collections', route('collections.index'));
+Breadcrumbs::for('admin.collections.index', function (BreadcrumbTrail $trail) {
+	$trail->push('Collections', route('admin.collections.index'));
 });
 
-Breadcrumbs::for('collections.create', function (BreadcrumbTrail $trail) {
-	$trail->parent('collections.index');
-	$trail->push('Create', route('collections.create'));
+Breadcrumbs::for('admin.collections.create', function (BreadcrumbTrail $trail) {
+	$trail->parent('admin.collections.index');
+	$trail->push('Create', route('admin.collections.create'));
 });
 
-Breadcrumbs::for('collections.edit', function (BreadcrumbTrail $trail, $id) {
-	$trail->parent('collections.index');
-	$trail->push('Edit', route('collections.edit', $id));
+Breadcrumbs::for('admin.collections.edit', function (BreadcrumbTrail $trail, $id) {
+	$trail->parent('admin.collections.index');
+	$trail->push('Edit', route('admin.collections.edit', $id));
 });
 
-Breadcrumbs::for('collections.show', function (BreadcrumbTrail $trail, $id) {
-	$trail->parent('collections.index');
-	$trail->push('Collection Details', route('collections.show', $id));
+Breadcrumbs::for('admin.collections.show', function (BreadcrumbTrail $trail, $id) {
+	$trail->parent('admin.collections.index');
+	$trail->push('Collection Details', route('admin.collections.show', $id));
 });
 
 
