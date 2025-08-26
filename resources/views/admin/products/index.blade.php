@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('admin.layouts.app')
 
 @section('content')
-@include('layouts.notification')
+@include('admin.layouts.notification')
 <div class="product-index-card">
     <div class="product-index-header">
         <h1>Product List</h1>
-        <a href="{{ route('products.create') }}" class="btn btn-primary add-product-btn">+ Add Product</a>
+        <a href="{{ route('products.create') }}" class="btn add-product-btn">+ Add Product</a>
     </div>
     <form method="GET" action="{{ route('products.index') }}" class="product-filter-bar">
         <input type="text" name="search" value="{{ request('search') }}" placeholder="Search by name or SKU" class="form-control">

@@ -12,10 +12,10 @@
 <body>
     <div class="main-app-wrapper">
         <aside id="sidebar-ecommerce" class="sidebar">
-            @include('layouts.sidebar')
+            @include('admin.layouts.sidebar')
         </aside>
         <div class="flex-1" id="main-content">
-            @include('layouts.navbar')
+            @include('admin.layouts.navbar')
             @isset($header)
                 <header class="my-6 px-6">
                     {{ $header }}

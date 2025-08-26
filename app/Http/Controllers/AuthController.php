@@ -12,7 +12,7 @@ class AuthController extends Controller
 {
     public function showLogin()
     {
-        return view('auth.login');
+    return view('admin.auth.login');
     }
 
     public function login(Request $request)
@@ -24,8 +24,12 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-
-            return redirect()->intended('/');
+            $user = Auth::user();
+            if ($user->is_admin) {
+                return redirect()->route('admin.dashboard');
+            } else {
+                return redirect()->route('users.dashboard');
+            }
         }
 
         return back()->withErrors([
@@ -34,7 +38,7 @@ class AuthController extends Controller
     }
     public function showRegister()
     {
-        return view('auth.register');
+    return view('admin.auth.register');
     }
 
     public function register(Request $request)

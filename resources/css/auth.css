@@ -24,26 +24,26 @@
   box-shadow: 0 12px 40px rgba(0,0,0,0.18);
 }
 
-.form-group {
+.form-group-login, .form-group-register {
   display: flex;
   flex-direction: column;
   max-width: 420px;
   margin: 0 auto 10px auto;
 }
 
-.form-group .profile {
+.form-group-login .profile, .form-group-register .profile {
   display: none;
   max-width: 120px;
   border-radius: 8px;
 }
 
-.form-group .toggle-switch-container {
+.form-group-login .toggle-switch-container, .form-group-register .toggle-switch-container {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.form-label {
+.form-label-login, .form-label-register {
   color: #374151;
   font-size: smaller;
   font-weight: 600;
@@ -91,7 +91,7 @@
   transform: scale(1.05);
 }
 
-.form-actions {
+.form-actions-login, .form-actions-register {
   margin-top: 12px;
 }
 

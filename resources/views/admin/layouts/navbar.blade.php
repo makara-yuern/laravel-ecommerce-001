@@ -13,7 +13,7 @@
             <img src="{{ Auth::user()->avatar ? asset('storage/' . Auth::user()->avatar) : asset('images/ecommerce03.jpg') }}" alt="Profile" class="navbar-profile" onclick="toggleUserDropdown(event)">
             <div class="user-dropdown">
                 <div class="user-dropdown-name">
-                    <a href="{{ route('profile') }}" class="navbar-profile-link">
+                    <a href="{{ route('admin.profile') }}" class="navbar-profile-link">
                         {{ Auth::user()->name }}
                     </a>
                 </div>

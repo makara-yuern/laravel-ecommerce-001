@@ -10,17 +10,17 @@ class CollectionController extends Controller
     public function index()
     {
         $collections = Collection::all();
-        return view('collections.index', compact('collections'));
+        return view('admin.collections.index', compact('collections'));
     }
 
     public function test()
     {
-        return view('collections.test');
+        return view('admin.collections.test');
     }
 
     public function create()
     {
-        return view('collections.create');
+        return view('admin.collections.create');
     }
 
     public function store(Request $request)
@@ -31,22 +31,22 @@ class CollectionController extends Controller
                 'description' => 'nullable|string',
             ]);
             Collection::create($data);
-            return redirect()->route('collections.index')->with(KEY_SUCCESS, 'Collection created successfully.');
+            return redirect()->route('admin.collections.index')->with(KEY_SUCCESS, 'Collection created successfully.');
         } catch (\Exception $e) {
-            return redirect()->route('collections.index')->with(KEY_FAIL, 'Failed to create collection.');
+            return redirect()->route('admin.collections.index')->with(KEY_FAIL, 'Failed to create collection.');
         }
     }
 
     public function show($id)
     {
         $collection = Collection::findOrFail($id);
-        return view('collections.show', compact('collection'));
+        return view('admin.collections.show', compact('collection'));
     }
 
     public function edit($id)
     {
         $collection = Collection::findOrFail($id);
-        return view('collections.edit', compact('collection'));
+        return view('admin.collections.edit', compact('collection'));
     }
 
     public function update(Request $request, $id)
@@ -57,13 +57,13 @@ class CollectionController extends Controller
             'description' => 'nullable|string',
         ]);
         $collection->update($data);
-        return redirect()->route('collections.index');
+        return redirect()->route('admin.collections.index');
     }
 
     public function destroy($id)
     {
         $collection = Collection::findOrFail($id);
         $collection->delete();
-        return redirect()->route('collections.index');
+        return redirect()->route('admin.collections.index');
     }
 }

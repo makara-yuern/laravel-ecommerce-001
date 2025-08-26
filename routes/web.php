@@ -7,18 +7,24 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CollectionController;
 
-
-Route::redirect('/', '/dashboard');
-
+Route::get('/', function () {
+    return redirect()->route('login');
+});
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
 Route::post('/register', [AuthController::class, 'register']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware('auth')->name('dashboard');
+// Admin dashboard route
+Route::middleware('auth')->get('/admin/dashboard', function () {
+    return view('admin.dashboard');
+})->name('admin.dashboard');
+
+// User dashboard route (if needed)
+Route::middleware('auth')->get('/users/dashboard', function () {
+    return view('users.dashboard');
+})->name('users.dashboard');
 
 // Products
 Route::prefix('products')->name('products.')->group(function () {
@@ -55,8 +61,8 @@ Route::prefix('collections')->name('collections.')->group(function () {
 
 // Profile routes (preserved)
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'showProfile'])->name('profile');
-    Route::post('/profile/update', [ProfileController::class, 'updateProfile'])->name('profile.update');
+    Route::middleware('auth')->get('/admin/profile', [ProfileController::class, 'showProfile'])->name('admin.profile');
+    Route::post('/admin/profile/update', [ProfileController::class, 'updateProfile'])->name('admin.profile.update');
 });
 
 Route::get('/test', [CollectionController::class, 'test'])->name('test');

@@ -10,7 +10,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::with(['categories', 'collections', 'images'])->paginate(20);
-        return view('products.index', compact('products'));
+        return view('admin.products.index', compact('products'));
     }
 
     public function create()
@@ -19,7 +19,7 @@ class ProductController extends Controller
         $collections = \App\Models\Collection::all();
         $attributes = \App\Models\Attribute::with('values')->get();
         $variants = \App\Models\ProductVariant::all();
-        return view('products.create', compact('categories', 'collections', 'attributes', 'variants'));
+        return view('admin.products.create', compact('categories', 'collections', 'attributes', 'variants'));
     }
 
     public function store(Request $request)
@@ -51,7 +51,7 @@ class ProductController extends Controller
                 ]);
             }
         }
-        return redirect()->route('products.index')->with(KEY_SUCCESS, 'Product created successfully.');
+        return redirect()->route('admin.products.index')->with(KEY_SUCCESS, 'Product created successfully.');
     }
 
     public function show($id)
@@ -62,7 +62,7 @@ class ProductController extends Controller
             'images',
             'variants.attributeValues.attribute',
         ])->findOrFail($id);
-        return view('products.show', compact('product'));
+        return view('admin.products.show', compact('product'));
     }
 
     public function edit($id)
@@ -72,7 +72,7 @@ class ProductController extends Controller
         $collections = \App\Models\Collection::all();
         $attributes = \App\Models\Attribute::with('values')->get();
         $variants = \App\Models\ProductVariant::all();
-        return view('products.edit', compact('product', 'categories', 'collections', 'attributes', 'variants'));
+        return view('admin.products.edit', compact('product', 'categories', 'collections', 'attributes', 'variants'));
     }
 
     public function update(Request $request, $id)
@@ -105,13 +105,13 @@ class ProductController extends Controller
                 ]);
             }
         }
-        return redirect()->route('products.index');
+        return redirect()->route('admin.products.index');
     }
 
     public function destroy($id)
     {
         $product = Product::findOrFail($id);
         $product->delete();
-        return redirect()->route('products.index');
+        return redirect()->route('admin.products.index');
     }
 }

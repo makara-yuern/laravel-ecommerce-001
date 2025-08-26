@@ -1,10 +1,10 @@
-@extends('layouts.guest')
+@extends('admin.layouts.guest')
 
 @section('content')
 <form method="POST" action="{{ route('register') }}" class="register-form" enctype="multipart/form-data">
     @csrf
-    <div class="form-group">
-        <label for="name" class="form-label">Name:</label>
+    <div class="form-group-register">
+        <label for="name" class="form-label-register">Name:</label>
         <input 
         id="name" 
         type="text" 
@@ -18,8 +18,8 @@
         <div class="error-message">{{ $message }}</div>
         @enderror
     </div>
-    <div class="form-group">
-        <label for="email" class="form-label">Email:</label>
+    <div class="form-group-register">
+        <label for="email" class="form-label-register">Email:</label>
         <input id="email" 
         type="email" 
         name="email" 
@@ -31,8 +31,8 @@
         <div class="error-message">{{ $message }}</div>
         @enderror
     </div>
-    <div class="form-group">
-        <label for="password" class="form-label">Password:</label>
+    <div class="form-group-register">
+        <label for="password" class="form-label-register">Password:</label>
         <input 
         id="password" 
         type="password" 
@@ -44,8 +44,8 @@
         <div class="error-message">{{ $message }}</div>
         @enderror
     </div>
-    <div class="form-group">
-        <label for="password_confirmation" class="form-label">Confirm Password:</label>
+    <div class="form-group-register">
+        <label for="password_confirmation" class="form-label-register">Confirm Password:</label>
         <input 
         id="password_confirmation" 
         type="password" 
@@ -57,8 +57,8 @@
         <div class="error-message">{{ $message }}</div>
         @enderror
     </div>
-    <div class="form-group">
-        <label for="profile" class="form-label">Profile Image:</label>
+    <div class="form-group-register">
+        <label for="profile" class="form-label-register">Profile Image:</label>
         <input id="profile" type="file" name="profile" accept="image/*" class="form-input">
         <div>
             <img id="profile-preview" src="#" alt="Profile Preview" />
@@ -66,8 +66,8 @@
         @error('profile')<div class="error-message">{{ $message }}</div>@enderror
     </div>
 
-    <div class="form-group">
-        <label for="isadmin" class="form-label">Is Admin:</label>
+    <div class="form-group-register">
+        <label for="isadmin" class="form-label-register">Is Admin:</label>
         <div class="toggle-switch-container">
             {{-- <span>Off</span> --}}
             <label class="toggle-switch" for="isadmin">
@@ -78,7 +78,7 @@
         </div>
         @error('isadmin')<div class="error-message">{{ $message }}</div>@enderror
     </div>
-    <div class="form-group form-actions">
+    <div class="form-group-register form-actions-register">
         <button type="submit" class="btn-primary">Register</button>
         <a href="{{ route('login') }}" class="link-register">Already have an account? Login</a>
     </div>

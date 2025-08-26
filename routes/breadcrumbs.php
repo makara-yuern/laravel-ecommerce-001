@@ -4,12 +4,19 @@ use Diglactic\Breadcrumbs\Breadcrumbs;
 use Diglactic\Breadcrumbs\Generator as BreadcrumbTrail;
 
 // Dashboard
-Breadcrumbs::for('dashboard', function (BreadcrumbTrail $trail) {
-	$trail->push('Dashboard', route('dashboard'));
+
+// Admin Dashboard
+Breadcrumbs::for('admin.dashboard', function (BreadcrumbTrail $trail) {
+	$trail->push('Dashboard', route('admin.dashboard'));
 });
 
-Breadcrumbs::for('profile', function (BreadcrumbTrail $trail) {
-	$trail->push('Profile', route('profile'));
+// User Dashboard
+Breadcrumbs::for('users.dashboard', function (BreadcrumbTrail $trail) {
+	$trail->push('Dashboard', route('users.dashboard'));
+});
+
+Breadcrumbs::for('admin.profile', function (BreadcrumbTrail $trail) {
+	$trail->push('Admin Profile', route('admin.profile'));
 });
 
 // Products

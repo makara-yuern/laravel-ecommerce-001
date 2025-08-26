@@ -132,7 +132,9 @@
     border-radius: 8px;
     font-weight: 600;
     text-decoration: none;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); */
+    background: rgb(29, 168, 29);
+    color: white;
     transition: background 0.15s, color 0.15s;
 }
 

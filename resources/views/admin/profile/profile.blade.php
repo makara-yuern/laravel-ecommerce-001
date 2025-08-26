@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('admin.layouts.app')
 
 @section('content')
 <div class="profile-container">
     <p>Update your profile information</p>
     <div class="profile-info">
     <img src="{{ Auth::user()->avatar ? asset('storage/' . Auth::user()->avatar) : asset('images/ecommerce03.jpg') }}" alt="Profile" class="profile-avatar" id="profilePreview" onclick="document.getElementById('avatar').click()">
-    <form method="POST" action="{{ route('profile.update') }}" class="profile-update-form" enctype="multipart/form-data">
+    <form method="POST" action="{{ route('admin.profile.update') }}" class="profile-update-form" enctype="multipart/form-data">
             @csrf
             @method('POST')
             <input type="file" id="avatar" name="avatar" class="profile-input" accept="image/*" onchange="previewProfileImage(event)">
