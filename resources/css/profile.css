@@ -106,6 +106,10 @@
     background: #f9fafb;
 }
 
+#avatar {
+    display: none;
+}
+
 .profile-save {
     background: #6366f1;
     color: #fff;
