@@ -38,10 +38,10 @@
     @if($product->images && $product->images->count())
         <div class="form-row">
             <label>Current Images:</label>
-            <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <div class="image-preview">
                 @foreach($product->images as $img)
                     <div>
-                        <img src="{{ asset('storage/' . $img->url) }}" alt="Product Image" style="max-width:80px;max-height:80px;border:1px solid #ccc;border-radius:6px;">
+                        <img src="{{ asset('storage/' . $img->url) }}" alt="Product Image" class="image-preview-item">
                     </div>
                 @endforeach
             </div>

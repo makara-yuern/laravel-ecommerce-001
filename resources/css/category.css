@@ -21,6 +21,18 @@
     margin: 0;
 }
 
+.product-filter-bar {
+    margin-bottom: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+}
+
+.action {
+    display: inline-block;
+}
+
 .add-category-btn:hover, .add-collection-btn:hover {
     background: #2563eb;
     color: #fff;

@@ -39,9 +39,9 @@
                         $mainImage = $product->images->where('is_main', true)->first() ?? $product->images->first();
                     @endphp
                     @if($mainImage)
-                        <img src="{{ asset('storage/' . $mainImage->url) }}" alt="Product Image" style="max-width:60px;max-height:60px;border:1px solid #ccc;">
+                        <img src="{{ asset('storage/' . $mainImage->url) }}" alt="Product Image" class="image-preview-item">
                     @else
-                        <span style="color:#aaa;font-size:12px;">No image</span>
+                        <span class="no-image">No image</span>
                     @endif
                 </td>
                 <td>{{ $product->name }}</td>
@@ -66,7 +66,7 @@
                 <td class="product-actions">
                     <a href="{{ route('products.show', $product->id) }}" class="btn-action view">View</a>
                     <a href="{{ route('products.edit', $product->id) }}" class="btn-action edit">Edit</a>
-                    <form action="{{ route('products.destroy', $product->id) }}" method="POST" style="display:inline;">
+                    <form action="{{ route('products.destroy', $product->id) }}" method="POST" class="action">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn-action delete" onclick="return confirm('Are you sure?')">Delete</button>

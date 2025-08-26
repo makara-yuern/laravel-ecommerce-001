@@ -5,10 +5,6 @@
         </nav>
     </div>
     <div class="nav-action">
-        <form class="navbar-search">
-            <input type="text" placeholder="Search..." class="navbar-search-input">
-            <span class="navbar-search-icon">🔍</span>
-        </form>
         <button class="navbar-notification">
             <span class="navbar-notification-icon">🔔</span>
             <span class="navbar-notification-badge">3</span>

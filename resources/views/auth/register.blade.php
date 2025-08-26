@@ -60,18 +60,18 @@
     <div class="form-group">
         <label for="profile" class="form-label">Profile Image:</label>
         <input id="profile" type="file" name="profile" accept="image/*" class="form-input">
-        <div style="margin-top:10px;">
-            <img id="profile-preview" src="#" alt="Profile Preview" style="display:none; max-width:120px; border-radius:8px;" />
+        <div>
+            <img id="profile-preview" src="#" alt="Profile Preview" />
         </div>
         @error('profile')<div class="error-message">{{ $message }}</div>@enderror
     </div>
 
     <div class="form-group">
         <label for="isadmin" class="form-label">Is Admin:</label>
-        <div style="display: flex; align-items: center; gap: 10px;">
+        <div class="toggle-switch-container">
             {{-- <span>Off</span> --}}
-            <label class="toggle-switch" for="isadmin" style="position: relative; display: inline-block; width: 50px; height: 24px; cursor: pointer;">
-                <input type="checkbox" id="isadmin" name="isadmin" value="1" style="width: 0; height: 0; opacity: 0;">
+            <label class="toggle-switch" for="isadmin">
+                <input type="checkbox" id="isadmin" name="isadmin" value="1">
                 <span class="slider"></span>
             </label>
             {{-- <span>On</span> --}}

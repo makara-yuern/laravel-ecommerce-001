@@ -9,7 +9,7 @@
     @vite(['resources/css/auth.css', 'resources/css/body.css', 'resources/js/profile-preview.js'])
 </head>
 <body>
-    <div class="main-content" style="min-height:100vh; display:flex; align-items:center; justify-content:center;">
+    <div class="main-content">
         @yield('content')
     </div>
 </body>
