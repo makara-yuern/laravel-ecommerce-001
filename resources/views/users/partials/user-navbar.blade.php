@@ -1,30 +1,43 @@
-<header class="navbar-home navbar-expand-lg navbar-light bg-white shadow-sm py-3">
-	<div class="container">
-		<!-- Logo -->
-		<a class="navbar-brand" href="/">
-			<img src="{{ asset('images/ecommerce03.jpg') }}" alt="Logo">
+<!-- Navbar -->
+<header class="navbar-home">
+    <div class="navbar-container">
+        <!-- Logo -->
+        <a href="/" class="navbar-brand">
+            <img src="{{ asset('images/ecommerce03.jpg') }}" alt="Logo">
             <h3>Ecommerce</h3>
-		</a>
+        </a>
 
-        <ul class="navbar-nav">
-            <li class="nav-item px-2"><a class="nav-link" href="#">Home</a></li>
-            <li class="nav-item px-2"><a class="nav-link" href="#">Shop</a></li>
-            <li class="nav-item px-2"><a class="nav-link" href="#">Collections</a></li>
-            <li class="nav-item px-2"><a class="nav-link" href="#">About</a></li>
-            <li class="nav-item px-2"><a class="nav-link" href="#">Contact</a></li>
-        </ul>
+        <!-- Navigation Links -->
+        <nav class="navbar-nav">
+            <a href="#" class="nav-link">Home</a>
 
-		<!-- Right Side Icons -->
-		<div class="d-flex align-items-center gap-3 ms-4">
-			<a href="#" class="text-dark fs-5 position-relative" title="Cart">
-				<i class="fa fa-shopping-cart"></i>
+            <!-- Shop Dropdown -->
+            <div class="nav-dropdown">
+                <a href="#" class="nav-link">Shop <i class="fa fa-chevron-down"></i></a>
+                <div class="dropdown-menu">
+                    <a href="#" class="dropdown-item">All Products</a>
+                    <a href="#" class="dropdown-item">New Arrivals</a>
+                    <a href="#" class="dropdown-item">Best Sellers</a>
+                    <a href="#" class="dropdown-item">Sale</a>
+                </div>
+            </div>
+
+            <a href="#" class="nav-link">Collections</a>
+            <a href="#" class="nav-link">About</a>
+            <a href="#" class="nav-link">Contact</a>
+        </nav>
+
+        <!-- Right Icons -->
+		<div class="navbar-icons">
+			<a href="#" title="Cart" class="navbar-icon">
+				<i class="fas fa-shopping-cart"></i>
 			</a>
-			<a href="#" class="text-dark fs-5 position-relative" title="Wishlist">
-				<i class="fa fa-heart"></i>
+			<a href="#" title="Wishlist" class="navbar-icon">
+				<i class="fas fa-heart"></i>
 			</a>
-			<a href="#" class="text-dark fs-5 position-relative" title="Profile">
-				<i class="fa fa-user"></i>
+			<a href="#" title="Profile" class="navbar-icon">
+				<i class="fas fa-user"></i>
 			</a>
 		</div>
-	</div>
+    </div>
 </header>
