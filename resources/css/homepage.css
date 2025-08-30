@@ -23,12 +23,14 @@
     padding: 2rem 1rem;
     background: linear-gradient(135deg, #f0f7ff, #ffffff);
 }
+
 .promo-banner-row {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
     justify-content: center;
 }
+
 .promo-banner {
     display: flex;
     align-items: center;
@@ -39,10 +41,12 @@
     box-shadow: 0 4px 20px rgba(0, 123, 255, 0.08);
     transition: transform 0.2s, box-shadow 0.2s;
 }
+
 .promo-banner:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 24px rgba(0, 123, 255, 0.15);
 }
+
 .promo-icon {
     font-size: 2rem;
     color: #007bff;
@@ -56,11 +60,13 @@
     margin-right: 1rem;
     box-shadow: 0 2px 8px rgba(0, 123, 255, 0.1);
 }
+
 .promo-text h6 {
     margin: 0 0 0.2rem 0;
     font-weight: 600;
     color: #1a237e;
 }
+
 .promo-text p {
     margin: 0;
     font-size: 0.95rem;
@@ -70,60 +76,59 @@
 /* ===== Newsletter Signup ===== */
 .newsletter-section {
     background: linear-gradient(135deg, #f0f7ff, #ffffff);
-    padding: 3rem 1rem;
+    padding: 4rem 1rem;
 }
+
 .newsletter-card {
-    padding: 2rem 1.5rem;
+    background: #fff;
     border-radius: 1.5rem;
+    padding: 2.5rem;
+    box-shadow: 0 6px 24px rgba(0, 123, 255, 0.08);
     max-width: 600px;
     margin: 0 auto;
-    box-shadow: 0 6px 24px rgba(0, 123, 255, 0.08);
-    background: linear-gradient(135deg, #ffffff, #f0f7ff);
+    text-align: center;
 }
+
 .newsletter-card h4 {
     font-weight: 700;
-    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
     color: #0d47a1;
 }
+
 .newsletter-card p {
-    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    margin-bottom: 2rem;
     color: #666;
 }
-.newsletter-btn {
-    background: linear-gradient(135deg, #007bff, #0056b3);
-    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
-}
-.newsletter-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(0, 123, 255, 0.2);
-    background: linear-gradient(135deg, #0056b3, #003f7f);
-}
-.newsletter-input:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
-}
+
 .newsletter-form {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
 }
+
 .newsletter-input {
     border-radius: 2rem;
     border: 1.5px solid #e0e6f1;
-    padding: 0.7rem 1.2rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
     width: 100%;
     max-width: 320px;
     transition: border 0.2s, box-shadow 0.2s;
 }
+
 .newsletter-input:focus {
     border-color: #007bff;
     box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
     outline: none;
 }
+
 .newsletter-btn {
     border-radius: 2rem;
     font-weight: 600;
+    font-size: 1rem;
     padding: 0.7rem 2rem;
     background: linear-gradient(135deg, #007bff, #0056b3);
     color: #fff;
@@ -131,6 +136,7 @@
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
 }
+
 .newsletter-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 18px rgba(0, 123, 255, 0.2);
@@ -404,14 +410,17 @@
     transform: scaleX(0);
     transition: transform 0.25s cubic-bezier(0.4, 2, 0.6, 1);
 }
+
 .navbar-nav .nav-link.active:after,
 .navbar-nav .nav-link:hover:after {
     transform: scaleX(1);
 }
+
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link:hover {
     color: #007bff !important;
 }
+
 .navbar-home .form-control {
     min-width: 200px !important;
     border-radius: 2rem !important;
@@ -421,10 +430,12 @@
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
     transition: border-color 0.2s, box-shadow 0.2s !important;
 }
+
 .navbar-home .form-control:focus {
     border-color: #007bff !important;
     box-shadow: 0 0 0 2px #007bff22 !important;
 }
+
 .navbar-home .fs-5,
 .navbar-home .icon {
     font-size: 1.3rem !important;
@@ -433,10 +444,12 @@
     transition: color 0.2s !important;
     cursor: pointer;
 }
+
 .navbar-home .fs-5:hover,
 .navbar-home .icon:hover {
     color: #007bff !important;
 }
+
 /* ========== Animations & Effects ========== */
 .fade-in {
     opacity: 0;
@@ -465,6 +478,7 @@
     box-shadow: 0 6px 32px rgba(0, 0, 0, 0.06);
     overflow: hidden;
 }
+
 .hero-section .hero-content {
     position: relative;
     z-index: 2;
@@ -475,6 +489,7 @@
     max-width: 600px;
     margin: 0 auto;
 }
+
 .hero-section h1 {
     font-size: 2.8rem;
     font-weight: 800;
@@ -483,12 +498,14 @@
     text-shadow: 0 2px 8px rgba(30, 64, 175, 0.18);
     color: #fff;
 }
+
 .hero-section p.lead {
     color: #e3e8ee;
     font-size: 1.25rem;
     margin-bottom: 1.5rem;
     text-shadow: 0 1px 4px rgba(30, 41, 59, 0.18);
 }
+
 .hero-section .btn-primary {
     padding: 0.8rem 2.2rem;
     font-size: 1.15rem;
@@ -497,10 +514,12 @@
     box-shadow: 0 2px 12px rgba(0, 123, 255, 0.1);
     transition: background 0.2s, box-shadow 0.2s;
 }
+
 .hero-section .btn-primary:hover {
     background: #0056b3 !important;
     box-shadow: 0 4px 24px rgba(0, 123, 255, 0.18);
 }
+
 @media (max-width: 767px) {
     .hero-section {
         min-height: 260px;
