@@ -1,4 +1,4 @@
-@extends('admin.layouts.guest')
+@extends('layouts.guest')
 
 @section('content')
 <form method="POST" action="{{ route('register') }}" class="register-form" enctype="multipart/form-data">

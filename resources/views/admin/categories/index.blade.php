@@ -1,7 +1,7 @@
-@extends('admin.layouts.app')
+@extends('layouts.app')
 
 @section('content')
-@include('admin.layouts.notification')
+@include('layouts.notification')
 <div class="category-index-card">
     <div class="category-index-header">
         <h1>Categories</h1>

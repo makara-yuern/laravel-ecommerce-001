@@ -7,15 +7,12 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/css/homepage.css', 'resources/js/app.js'])
 </head>
 <body>
     <div class="main-app-wrapper">
-        <aside id="sidebar-ecommerce" class="sidebar">
-            @include('admin.layouts.sidebar')
-        </aside>
         <div class="flex-1" id="main-content">
-            @include('admin.layouts.navbar')
+            @include('users.partials.user-navbar')
             @isset($header)
                 <header class="my-6 px-6">
                     {{ $header }}
